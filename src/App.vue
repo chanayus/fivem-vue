@@ -55,10 +55,10 @@ import { data } from "./data";
         </section>
 
         <!-- Mining Performance -->
-        <section class="whitespace-nowrap p-2 flex-1 bg-white/10 rounded-md flex items-center gap-x-2">
+        <section class="whitespace-nowrap p-2 flex-1 bg-white/10 rounded-md flex items-center gap-x-2.5">
           <img :src="pickaxeIcon" alt="" width="14" height="14" class="w-4 h-4 shrink-0" />
           <div>
-            <h5 class="text-sm">กำลังขุด</h5>
+            <h5 class="text-sm leading-tight">กำลังขุด</h5>
             <div class="text-xs flex items-center gap-x-1 font-light opacity-50">
               <img :src="coalIcon" alt="" width="8" height="8" class="w-2 h-2" />
               <p> {{ item.performance }} /30 วิ</p>
@@ -66,10 +66,10 @@ import { data } from "./data";
           </div>
         </section>
         <!-- Mining Capacity -->
-        <section :class="['whitespace-nowrap p-2 flex-1 rounded-md flex items-center gap-x-2', item.capacity >= 150 ? 'bg-[rgba(255,_60,_60,_0.5)]' : 'bg-white/10']">
+        <section :class="['whitespace-nowrap p-2 flex-1 rounded-md flex items-center gap-x-2.5', item.capacity >= 150 ? 'bg-[rgba(255,_60,_60,_0.5)]' : 'bg-white/10']">
           <img :src="goldIcon" alt="" width="14" height="14" class="w-4 h-4 shrink-0" />
           <div>
-            <h5 class="text-sm">ความจุ</h5>
+            <h5 class="text-sm leading-tight">ความจุ</h5>
             <div class="text-xs flex items-center gap-x-1 font-light opacity-50">
               <img :src="coalIcon" alt="" width="8" height="8" class="w-2 h-2" />
               <p>{{ item.capacity }}/150</p>
@@ -77,10 +77,10 @@ import { data } from "./data";
           </div>
         </section>
         <!-- Fuel -->
-        <section :class="['whitespace-nowrap p-2 flex-1 rounded-md flex items-center gap-x-2', item.fuel <= 0 ? 'bg-[rgba(255,_60,_60,_0.5)]' : 'bg-white/10']">
+        <section :class="['whitespace-nowrap p-2 flex-1 rounded-md flex items-center gap-x-2.5', item.fuel <= 0 ? 'bg-[rgba(255,_60,_60,_0.5)]' : 'bg-white/10']">
           <img :src="fuelIcon" alt="" width="14" height="14" class="w-4 h-4 shrink-0" />
           <div>
-            <h5 class="text-sm">เชื้อเพลิง</h5>
+            <h5 class="text-sm leading-tight">เชื้อเพลิง</h5>
             <div class="text-xs flex items-center gap-x-1 font-light opacity-50">
               <p>{{ item.fuel }}% (20นาที)</p>
             </div>
