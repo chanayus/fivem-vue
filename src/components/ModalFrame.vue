@@ -29,13 +29,13 @@ const mergedClasses = computed(() => twMerge("w-[25rem] h-fit flex flex-col text
 
 <template>
   <section :class="mergedClasses">
-    <header class="flex items-center justify-between p-2 bg-black rounded-t-lg">
-      <div class="flex items-center space-x-2">
+    <header class="flex items-center justify-between p-3 bg-black rounded-t-lg">
+      <div class="flex items-center gap-x-3">
         <div class="w-10 h-10 p-2 rounded-md bg-white/20">
           <img :src="icon" alt="" width="24" height="24" class="w-full opacity-50" />
         </div>
         <div>
-          <h2 class="font-bold text-xl leading-5 uppercase text-gradient">{{ title }}</h2>
+          <h2 class="font-bold text-2xl leading-none uppercase text-gradient">{{ title }}</h2>
           <p class="text-xs font-light">{{ desc }}</p>
         </div>
       </div>
