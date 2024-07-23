@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*:-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #00000018;
+  border-radius: 4px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+*::-webkit-scrollbar {
+  width: 2px;
+  background-color: #0000002e;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(141, 141, 141, 1);
+  border-radius: 4px;
+}
+
+:root {
+  --primary: linear-gradient(90deg, #32c0fe 0%, #0d6fab 100%);
+  --solid-primary: rgba(57, 172, 231, 1);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: "Kanit", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+* {
+  font-family: "Kanit", system-ui, Helvetica, Arial, sans-serif;
+}
+
+html {
+  font-size: max(10px, 0.72vw);
+  background: #999;
+}
+
+.text-gradient {
+  background: var(--primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.bg-solid-primary {
+  background: var(--solid-primary);
+}
