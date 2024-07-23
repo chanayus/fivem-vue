@@ -16,13 +16,15 @@ import { data } from "./data";
           <figure class="aspect-square w-9 rounded-md bg-black/50 p-1">
             <img :src="miningIcon" alt="" />
           </figure>
-          <div class="flex flex-col gap-y-1 justify-between flex-1">
-            <hgroup class="flex justify-between items-center">
-              <p class="text-sm">{{ item.name }}</p>
+          <div class="flex flex-col gap-y-1 justify-between flex-1 truncate">
+            <hgroup class="flex justify-between items-center gap-x-3">
+              <p class="text-sm truncate">
+                {{ item.name }}
+              </p>
               <div class="flex gap-x-1.5 text-xs">
-                <button v-if="item.isMining" class="rounded-sm px-1 bg-red">STOP</button>
-                <button v-if="!item.isMining" class="rounded-sm px-1 bg-sky">START</button>
-                <button class="rounded-sm px-1 bg-green">REFUEL</button>
+                <button v-if="item.isMining" class="rounded-sm px-1.5 bg-red">STOP</button>
+                <button v-if="!item.isMining" class="rounded-sm px-1.5 bg-sky">START</button>
+                <button class="rounded-sm px-1.5 bg-green">REFUEL</button>
               </div>
             </hgroup>
             <!-- Progress -->
@@ -45,10 +47,10 @@ import { data } from "./data";
           <div v-if="item.fuel <= 0" class="absolute flex justify-center items-center z-20 gap-x-2 w-full h-full bg-black/90 left-0 top-0">
             <img :src="fuelIcon" alt="" width="20" height="20" class="w-5 h-5" />
             <div>
-              <h3 class="text-sm leading-tight">ไม่สามารถขุดแร่ต่อได้</h3>
-              <div class="text-xs font-light flex gap-x-1">
-                <span class="opacity-50">เชื้อเพลิงหมด</span>
-                <button class="rounded-sm px-1 bg-green">REFUEL</button>
+              <h3 class="text-sm leading-4">ไม่สามารถขุดแร่ต่อได้</h3>
+              <div class="text-xs flex gap-x-1">
+                <span class="opacity-50 font-light">เชื้อเพลิงหมด</span>
+                <button class="rounded-sm px-1.5 font-me bg-green">REFUEL</button>
               </div>
             </div>
           </div>
@@ -57,32 +59,32 @@ import { data } from "./data";
         <!-- Mining Performance -->
         <section class="whitespace-nowrap p-2 flex-1 bg-white/10 rounded-md flex items-center gap-x-2.5">
           <img :src="pickaxeIcon" alt="" width="14" height="14" class="w-4 h-4 shrink-0" />
-          <div>
-            <h5 class="text-sm leading-tight">กำลังขุด</h5>
+          <div class="truncate">
+            <h5 class="text-sm leading-tight truncate">กำลังขุด</h5>
             <div class="text-xs flex items-center gap-x-1 font-light opacity-50">
               <img :src="coalIcon" alt="" width="8" height="8" class="w-2 h-2" />
-              <p> {{ item.performance }} /30 วิ</p>
+              <p class="truncate">{{ item.performance }} /30 วิ</p>
             </div>
           </div>
         </section>
         <!-- Mining Capacity -->
-        <section :class="['whitespace-nowrap p-2 flex-1 rounded-md flex items-center gap-x-2.5', item.capacity >= 150 ? 'bg-[rgba(255,_60,_60,_0.5)]' : 'bg-white/10']">
+        <section :class="['truncate whitespace-nowrap p-2 flex-1 rounded-md flex items-center gap-x-2.5', item.capacity >= 150 ? 'bg-[rgba(255,_60,_60,_0.5)]' : 'bg-white/10']">
           <img :src="goldIcon" alt="" width="14" height="14" class="w-4 h-4 shrink-0" />
-          <div>
-            <h5 class="text-sm leading-tight">ความจุ</h5>
+          <div class="truncate">
+            <h5 class="text-sm leading-tight truncate">ความจุ</h5>
             <div class="text-xs flex items-center gap-x-1 font-light opacity-50">
               <img :src="coalIcon" alt="" width="8" height="8" class="w-2 h-2" />
-              <p>{{ item.capacity }}/150</p>
+              <p class="truncate">{{ item.capacity }}/150</p>
             </div>
           </div>
         </section>
         <!-- Fuel -->
         <section :class="['whitespace-nowrap p-2 flex-1 rounded-md flex items-center gap-x-2.5', item.fuel <= 0 ? 'bg-[rgba(255,_60,_60,_0.5)]' : 'bg-white/10']">
           <img :src="fuelIcon" alt="" width="14" height="14" class="w-4 h-4 shrink-0" />
-          <div>
-            <h5 class="text-sm leading-tight">เชื้อเพลิง</h5>
+          <div class="truncate">
+            <h5 class="text-sm leading-tight truncate">เชื้อเพลิง</h5>
             <div class="text-xs flex items-center gap-x-1 font-light opacity-50">
-              <p>{{ item.fuel }}% (20นาที)</p>
+              <p class="truncate">{{ item.fuel }}% (20นาที)</p>
             </div>
           </div>
         </section>
